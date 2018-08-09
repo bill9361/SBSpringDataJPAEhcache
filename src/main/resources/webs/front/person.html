@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Person</title>
+</head>
+<body>
+<p><a href="/person/findByNameLike.do?name=张">查看人员信息ByNameLike_张</a></p>
+<p><a href="/person/findByNameLike.do?name=李">查看人员信息ByNameLike_李</a></p>
+<p><a href="/person/findByNameAndAge.do?name=张&age=25">查看人员信息ByNameAndAge_张_25</a></p>
+<p><a href="/person/findByNameAndAge.do?name=李&age=20">查看人员信息ByNameAndAge_李_20</a></p>
+<#if personList??>
+	<#list personList as person>
+		<p>ID：${person.id}  姓名：${person.name}</p>
+	</#list>
+</#if>
+<hr>
+<p><a href="/person/addOrUpdate.do">更新人员信息</a></p>
+<#if person??>
+	<p>ID：${person.id}  姓名：${person.name}</p>
+</#if>
+</body>
+</html>
